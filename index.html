@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disciplined | The Discipline Lifestyle</title>
+  <meta name="description" content="Disciplined is a lifestyle brand built on focus, training, and relentless consistency. Premium gym apparel and accessories." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="logo-wrap">
+        <img src="assets/logo.svg" alt="Disciplined logo" class="logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#drops">Drops</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="ghost" id="openCart">Cart <span class="pill" id="cartCount">0</span></button>
+        <button class="accent">Join the Movement</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">DISCIPLINE IS THE CULTURE</p>
+        <h1>Live in training mode. Every day.</h1>
+        <p class="lead">Disciplined is a performance lifestyle brand for builders, athletes, and creators. Minimal design. Maximum intent. Own your routines. Own your results.</p>
+        <div class="hero-actions">
+          <button class="accent" id="heroShop">Shop New Arrivals</button>
+          <button class="ghost">View Lookbook</button>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <h3>90K+</h3>
+            <p>Disciplined routines logged</p>
+          </div>
+          <div>
+            <h3>30</h3>
+            <p>Day discipline system</p>
+          </div>
+          <div>
+            <h3>24/7</h3>
+            <p>Mindset support</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orb"></div>
+        <div class="product-card">
+          <div class="product-image">Featured Visual</div>
+          <div class="product-info">
+            <div>
+              <h4>Forge Compression Set</h4>
+              <p>Blackout edition</p>
+            </div>
+            <span>$88</span>
+          </div>
+        </div>
+        <div class="quote">
+          <p>"Discipline is the shortcut. Train like it."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="section-header">
+        <h2>Shop the discipline kit</h2>
+        <p>Apparel + accessories engineered for focused sessions and everyday wear.</p>
+      </div>
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="tops">Tops</button>
+        <button class="filter" data-filter="bottoms">Bottoms</button>
+        <button class="filter" data-filter="accessories">Accessories</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section id="story" class="section split">
+      <div>
+        <h2>The disciplined promise</h2>
+        <p>We design with intention: engineered fabrics, silent strength palettes, and modular fits that adapt to your routine. Every piece supports the work before the results.</p>
+        <ul class="bullets">
+          <li>Premium heavyweight knits + sweat-wicking tech</li>
+          <li>Confidence-backed 30-day wear test</li>
+          <li>Mindset tools + training plans in every order</li>
+        </ul>
+        <button class="accent">Explore the system</button>
+      </div>
+      <div class="visual-stack">
+        <div class="stack-card">
+          <h4>Discipline Blueprint</h4>
+          <p>Weekly training + recovery grid. Fully customizable.</p>
+        </div>
+        <div class="stack-card glass">
+          <h4>Founder note</h4>
+          <p>"We built Disciplined to keep people in motion. When your apparel performs, your mindset follows."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="drops" class="section">
+      <div class="section-header">
+        <h2>Upcoming drops</h2>
+        <p>Limited collections engineered around momentum. Subscribe to lock your spot.</p>
+      </div>
+      <div class="drops-grid">
+        <div class="drop-card">
+          <h3>Steel Horizon</h3>
+          <p>Monochrome essentials. Heavyweight fleece. Launching Jan 2026.</p>
+          <button class="ghost">Notify me</button>
+        </div>
+        <div class="drop-card">
+          <h3>Night Shift</h3>
+          <p>Reflective trims + ultra-light layering. Drops Feb 2026.</p>
+          <button class="ghost">Notify me</button>
+        </div>
+        <div class="drop-card">
+          <h3>Momentum Lab</h3>
+          <p>Accessory suite: grips, straps, bottles, and focus tools.</p>
+          <button class="ghost">Notify me</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" class="section">
+      <div class="section-header">
+        <h2>Disciplined community</h2>
+        <p>Every order unlocks our focus hub, weekly challenges, and accountability squads.</p>
+      </div>
+      <div class="community-grid">
+        <div class="community-card">
+          <h4>Daily discipline prompts</h4>
+          <p>Start every morning with a tactical prompt designed for momentum.</p>
+        </div>
+        <div class="community-card">
+          <h4>Progress scoreboard</h4>
+          <p>Track your routines, streaks, and milestones in one clean interface.</p>
+        </div>
+        <div class="community-card">
+          <h4>Accountability pods</h4>
+          <p>Join micro-communities with shared goals and weekly check-ins.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section split contact">
+      <div>
+        <h2>Let’s build together</h2>
+        <p>Need custom team kits, collabs, or supplier integrations? We want to hear from you.</p>
+        <div class="contact-info">
+          <div>
+            <h4>Email</h4>
+            <p>hello@disciplined.co</p>
+          </div>
+          <div>
+            <h4>Support</h4>
+            <p>24-hour response window on all orders.</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form">
+        <label>
+          Name
+          <input type="text" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input type="email" placeholder="you@email.com" />
+        </label>
+        <label>
+          Message
+          <textarea placeholder="Tell us about your goals, your team, or your idea."></textarea>
+        </label>
+        <button type="button" class="accent">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <aside class="cart" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="ghost" id="closeCart">Close</button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">$0</strong>
+      </div>
+      <button class="accent" id="checkoutBtn">Checkout</button>
+      <p class="fineprint">Payment processing powered by Stripe or bank transfer integrations. Setup required.</p>
+    </div>
+  </aside>
+
+  <div class="checkout" id="checkoutModal">
+    <div class="checkout-card">
+      <div class="checkout-header">
+        <h3>Secure Checkout</h3>
+        <button class="ghost" id="closeCheckout">Close</button>
+      </div>
+      <div class="checkout-body">
+        <p>Complete your order to receive a confirmation number and invoice email.</p>
+        <label>
+          Full name
+          <input type="text" placeholder="Jordan Wells" />
+        </label>
+        <label>
+          Email
+          <input type="email" placeholder="jordan@discipline.com" />
+        </label>
+        <label>
+          Shipping address
+          <input type="text" placeholder="123 Focus Ave, Los Angeles" />
+        </label>
+        <button class="accent" id="confirmOrder">Confirm & Generate Invoice</button>
+        <div class="confirmation" id="confirmation"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <img src="assets/logo.svg" alt="Disciplined logo" class="logo small" />
+        <p>Discipline is a lifestyle. Built for relentless focus and consistent execution.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Shop</h4>
+          <a href="#shop">All products</a>
+          <a href="#drops">Upcoming drops</a>
+          <a href="#community">Community</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#story">Our story</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Careers</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+      <div class="newsletter">
+        <h4>Email us / Feedback</h4>
+        <p>Drop your email to get updates and share feedback.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="email@disciplined.co" />
+          <button class="accent">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2026 Disciplined. All rights reserved.</p>
+      <p class="legal">*All product imagery and specs are placeholders until final manufacturing assets are connected. Payments require payment processor setup.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
