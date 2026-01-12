@@ -283,6 +283,121 @@ main {
   color: var(--gray);
 }
 
+.motivation {
+  background: linear-gradient(120deg, rgba(199, 255, 58, 0.08), rgba(255, 255, 255, 0.02));
+  border-radius: 32px;
+  border: 1px solid var(--border);
+}
+
+.quote-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+}
+
+.quote-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.quote-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.quote-author {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.coach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.coach-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.coach-avatar {
+  height: 180px;
+  border-radius: 20px;
+  background: linear-gradient(140deg, #2a2a2a, #0f0f0f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.coach-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.coach-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 35;
+}
+
+.coach-modal.open {
+  display: flex;
+}
+
+.coach-modal-card {
+  background: #0b0b0b;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  padding: 2rem;
+  width: min(680px, 92vw);
+  box-shadow: var(--shadow);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.coach-modal-body {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.coach-modal-body h4 {
+  font-size: 1.6rem;
+}
+
+.coach-detail {
+  display: grid;
+  gap: 0.6rem;
+  color: var(--gray);
+}
+
 .split {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -520,5 +635,10 @@ main {
 
   .nav {
     flex-wrap: wrap;
+  }
+
+  .quote-panel {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

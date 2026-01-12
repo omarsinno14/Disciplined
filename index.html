@@ -19,6 +19,8 @@
       </div>
       <ul class="nav-links">
         <li><a href="#shop">Shop</a></li>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#coaches">Coaches</a></li>
         <li><a href="#story">Story</a></li>
         <li><a href="#drops">Drops</a></li>
         <li><a href="#community">Community</a></li>
@@ -86,6 +88,28 @@
         <button class="filter" data-filter="accessories">Accessories</button>
       </div>
       <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section id="motivation" class="section motivation">
+      <div class="section-header">
+        <h2>Discipline dashboard</h2>
+        <p>Tap through quotes that keep you locked in. Every click resets your focus.</p>
+      </div>
+      <div class="quote-panel">
+        <div class="quote-content" id="quoteContent">
+          <p class="quote-text">"Small steps done daily become unstoppable momentum."</p>
+          <span class="quote-author">- Disciplined Collective</span>
+        </div>
+        <button class="accent" id="nextQuote">Next quote</button>
+      </div>
+    </section>
+
+    <section id="coaches" class="section">
+      <div class="section-header">
+        <h2>Coaches on demand</h2>
+        <p>Connect with elite discipline coaches ready to guide your goals.</p>
+      </div>
+      <div class="coach-grid" id="coachGrid"></div>
     </section>
 
     <section id="story" class="section split">
@@ -228,6 +252,16 @@
         <button class="accent" id="confirmOrder">Confirm & Generate Invoice</button>
         <div class="confirmation" id="confirmation"></div>
       </div>
+    </div>
+  </div>
+
+  <div class="coach-modal" id="coachModal">
+    <div class="coach-modal-card">
+      <div class="checkout-header">
+        <h3>Coach profile</h3>
+        <button class="ghost" id="closeCoach">Close</button>
+      </div>
+      <div class="coach-modal-body" id="coachModalBody"></div>
     </div>
   </div>
 

@@ -43,6 +43,72 @@ const products = [
   },
 ];
 
+const quotes = [
+  {
+    text: "Small steps done daily become unstoppable momentum.",
+    author: "Disciplined Collective",
+  },
+  {
+    text: "Discipline is choosing the long game over the easy win.",
+    author: "Jocko Willink",
+  },
+  {
+    text: "We are what we repeatedly do. Excellence, then, is a habit.",
+    author: "Aristotle",
+  },
+  {
+    text: "Suffer the pain of discipline or the pain of regret.",
+    author: "Jim Rohn",
+  },
+  {
+    text: "Confidence is built in the reps no one sees.",
+    author: "Disciplined Coaches",
+  },
+  {
+    text: "The body achieves what the mind is trained to finish.",
+    author: "Focus Lab",
+  },
+];
+
+const coaches = [
+  {
+    id: 1,
+    name: "Amara Cross",
+    title: "Personal Trainer",
+    location: "Los Angeles, CA",
+    contact: "amara@disciplined.co",
+    specialties: "Strength, hypertrophy, performance programming",
+    bio: "Amara is a former collegiate athlete who builds relentless training systems. Her clients focus on strength, injury resilience, and peak performance habits.",
+  },
+  {
+    id: 2,
+    name: "Malik Reeves",
+    title: "Life Coach",
+    location: "Austin, TX",
+    contact: "malik@disciplined.co",
+    specialties: "Habit design, mindset reset, productivity",
+    bio: "Malik helps founders and athletes set daily discipline rituals. He blends mindset coaching with tactical action plans that make consistency automatic.",
+  },
+  {
+    id: 3,
+    name: "Serena Vale",
+    title: "Performance Nutrition Coach",
+    location: "Miami, FL",
+    contact: "serena@disciplined.co",
+    specialties: "Macro planning, recovery fuel, supplement guidance",
+    bio: "Serena builds nutrition systems for high achievers. Expect clean, sustainable protocols that keep energy steady and recovery optimized.",
+  },
+  {
+    id: 4,
+    name: "Eli Park",
+    title: "Mobility + Recovery Coach",
+    location: "Seattle, WA",
+    contact: "eli@disciplined.co",
+    specialties: "Mobility, flexibility, breathwork",
+    bio: "Eli guides disciplined athletes through mobility and recovery routines. His programs improve longevity, posture, and daily movement quality.",
+  },
+];
+
 const productGrid = document.getElementById("productGrid");
 const cartPanel = document.getElementById("cartPanel");
 const cartItems = document.getElementById("cartItems");
@@ -50,9 +116,14 @@ const cartCount = document.getElementById("cartCount");
 const cartSubtotal = document.getElementById("cartSubtotal");
 const checkoutModal = document.getElementById("checkoutModal");
 const confirmation = document.getElementById("confirmation");
+const quoteContent = document.getElementById("quoteContent");
+const coachGrid = document.getElementById("coachGrid");
+const coachModal = document.getElementById("coachModal");
+const coachModalBody = document.getElementById("coachModalBody");
 
 let cart = [];
 let activeFilter = "all";
+let quoteIndex = 0;
 
 const renderProducts = () => {
   productGrid.innerHTML = "";
@@ -131,6 +202,65 @@ const generateConfirmation = () => {
   return `DISC-${timestamp}-${random}`;
 };
 
+const updateQuote = () => {
+  const { text, author } = quotes[quoteIndex];
+  quoteContent.innerHTML = `
+    <p class="quote-text">"${text}"</p>
+    <span class="quote-author">- ${author}</span>
+  `;
+};
+
+const renderCoaches = () => {
+  coachGrid.innerHTML = "";
+  coaches.forEach((coach) => {
+    const card = document.createElement("div");
+    card.className = "coach-card";
+    card.dataset.coachId = coach.id;
+    card.innerHTML = `
+      <div class="coach-avatar">${coach.title} Photo</div>
+      <div>
+        <h3>${coach.name}</h3>
+        <p class="lead">${coach.title}</p>
+      </div>
+      <div class="coach-meta">
+        <span>${coach.location}</span>
+        <span>View profile</span>
+      </div>
+    `;
+    coachGrid.appendChild(card);
+  });
+};
+
+const openCoachModal = (coachId) => {
+  const coach = coaches.find((item) => item.id === coachId);
+  if (!coach) return;
+  coachModalBody.innerHTML = `
+    <div class="coach-avatar">${coach.title} Photo</div>
+    <div>
+      <h4>${coach.name}</h4>
+      <p class="lead">${coach.title}</p>
+    </div>
+    <div class="coach-detail">
+      <strong>Location</strong>
+      <span>${coach.location}</span>
+    </div>
+    <div class="coach-detail">
+      <strong>Contact</strong>
+      <span>${coach.contact}</span>
+    </div>
+    <div class="coach-detail">
+      <strong>Specialties</strong>
+      <span>${coach.specialties}</span>
+    </div>
+    <div class="coach-detail">
+      <strong>About ${coach.name.split(" ")[0]}</strong>
+      <span>${coach.bio}</span>
+    </div>
+    <button class="accent">Book a session</button>
+  `;
+  coachModal.classList.add("open");
+};
+
 productGrid.addEventListener("click", (event) => {
   const button = event.target.closest("button");
   if (!button) return;
@@ -143,6 +273,12 @@ cartItems.addEventListener("click", (event) => {
   if (!button) return;
   const id = Number(button.dataset.remove);
   if (id) removeFromCart(id);
+});
+
+coachGrid.addEventListener("click", (event) => {
+  const card = event.target.closest(".coach-card");
+  if (!card) return;
+  openCoachModal(Number(card.dataset.coachId));
 });
 
 const toggleCart = (state) => {
@@ -164,6 +300,13 @@ document.getElementById("closeCheckout").addEventListener("click", () => {
   confirmation.classList.remove("show");
 });
 
+const closeCoach = document.getElementById("closeCoach");
+if (closeCoach) {
+  closeCoach.addEventListener("click", () => {
+    coachModal.classList.remove("open");
+  });
+}
+
 document.getElementById("confirmOrder").addEventListener("click", () => {
   if (cart.length === 0) {
     confirmation.textContent = "Add items before confirming your order.";
@@ -181,6 +324,11 @@ document.getElementById("confirmOrder").addEventListener("click", () => {
   updateCart();
 });
 
+document.getElementById("nextQuote").addEventListener("click", () => {
+  quoteIndex = (quoteIndex + 1) % quotes.length;
+  updateQuote();
+});
+
 const filterButtons = document.querySelectorAll(".filter");
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -193,3 +341,5 @@ filterButtons.forEach((button) => {
 
 renderProducts();
 updateCart();
+updateQuote();
+renderCoaches();
