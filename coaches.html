@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disciplined Coaches | Book Your Session</title>
+  <meta name="description" content="Connect with Disciplined coaches. Book sessions with elite trainers, life coaches, nutritionists, and recovery experts." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="coaches-page">
+  <div class="noise"></div>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="logo-wrap">
+        <a href="index.html"><img src="assets/logo.svg" alt="Disciplined logo" class="logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#shop">Shop</a></li>
+        <li><a href="index.html#motivation">Motivation</a></li>
+        <li><a href="coaches.html">Coaches</a></li>
+        <li><a href="index.html#community">Community</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="accent">Join the Movement</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section coaches-hero">
+      <div>
+        <p class="eyebrow">DISCIPLINE COACHING</p>
+        <h1>Connect with the coach who moves you forward.</h1>
+        <p class="lead">Browse vetted coaches across training, life, nutrition, and recovery. Book a session, choose your payment preference, and lock in your next milestone.</p>
+      </div>
+      <div class="coach-hero-card">
+        <h3>How it works</h3>
+        <ol>
+          <li>Pick a coach who fits your discipline style.</li>
+          <li>Choose a time from their availability calendar.</li>
+          <li>Confirm payment method and send a note.</li>
+        </ol>
+        <p class="fineprint">Session confirmations will email both the coach and you with all booking details.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Available coaches</h2>
+        <p>Every coach includes a full profile, focus areas, location, and booking options.</p>
+      </div>
+      <div class="coach-grid" id="coachGrid"></div>
+    </section>
+  </main>
+
+  <div class="coach-modal" id="coachModal">
+    <div class="coach-modal-card">
+      <div class="checkout-header">
+        <h3>Coach profile</h3>
+        <button class="ghost" id="closeCoach">Close</button>
+      </div>
+      <div class="coach-modal-body" id="coachModalBody"></div>
+    </div>
+  </div>
+
+  <div class="booking-modal" id="bookingModal">
+    <div class="coach-modal-card">
+      <div class="checkout-header">
+        <h3>Book a session</h3>
+        <button class="ghost" id="closeBooking">Close</button>
+      </div>
+      <div class="booking-body" id="bookingBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <img src="assets/logo.svg" alt="Disciplined logo" class="logo small" />
+        <p>Discipline is a lifestyle. Built for relentless focus and consistent execution.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Company</h4>
+          <a href="index.html#story">Our story</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="coaches.html">Coaches</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+      <div class="newsletter">
+        <h4>Email us / Feedback</h4>
+        <p>Drop your email to get updates and share feedback.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="email@disciplined.co" />
+          <button class="accent">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2026 Disciplined. All rights reserved.</p>
+      <p class="legal">*Coach availability, pricing, and payment collection are placeholders until live scheduling + payment integrations are connected.</p>
+    </div>
+  </footer>
+
+  <script src="coaches.js"></script>
+</body>
+</html>

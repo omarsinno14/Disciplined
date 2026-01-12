@@ -82,7 +82,8 @@ a {
   gap: 0.8rem;
 }
 
-button {
+button,
+.accent {
   border: none;
   cursor: pointer;
   padding: 0.75rem 1.4rem;
@@ -91,12 +92,14 @@ button {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-button:hover {
+button:hover,
+.accent:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow);
 }
 
-button.accent {
+button.accent,
+.accent {
   background: var(--accent);
   color: #050505;
 }
@@ -316,6 +319,39 @@ main {
   font-size: 0.95rem;
 }
 
+.coaches-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 32px;
+  border: 1px solid var(--border);
+}
+
+.coaches-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.coach-hero-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.coach-hero-card ol {
+  color: var(--gray);
+  display: grid;
+  gap: 0.5rem;
+  padding-left: 1.2rem;
+}
+
 .coach-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -357,7 +393,8 @@ main {
   font-size: 0.9rem;
 }
 
-.coach-modal {
+.coach-modal,
+.booking-modal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
@@ -367,7 +404,8 @@ main {
   z-index: 35;
 }
 
-.coach-modal.open {
+.coach-modal.open,
+.booking-modal.open {
   display: flex;
 }
 
@@ -376,7 +414,7 @@ main {
   border-radius: 24px;
   border: 1px solid var(--border);
   padding: 2rem;
-  width: min(680px, 92vw);
+  width: min(720px, 92vw);
   box-shadow: var(--shadow);
   max-height: 85vh;
   overflow-y: auto;
@@ -396,6 +434,82 @@ main {
   display: grid;
   gap: 0.6rem;
   color: var(--gray);
+}
+
+.booking-body {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.calendar-day {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.calendar-day h5 {
+  font-size: 1rem;
+}
+
+.calendar-day p {
+  color: var(--gray);
+}
+
+.calendar-time {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.calendar-time.selected {
+  background: var(--accent);
+  color: #050505;
+}
+
+.booking-field {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--gray);
+}
+
+.booking-field input,
+.booking-field textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #0c0c0c;
+  color: var(--white);
+}
+
+.booking-field textarea {
+  min-height: 100px;
+}
+
+.payment-options {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--gray);
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .split {
@@ -638,6 +752,11 @@ main {
   }
 
   .quote-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .coaches-cta {
     flex-direction: column;
     align-items: flex-start;
   }
